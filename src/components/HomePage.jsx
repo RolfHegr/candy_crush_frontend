@@ -1,8 +1,7 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Card, Container } from "react-bootstrap";
 import "../css/HomePage.css";
 import "../css/App.css";
-import axios from "axios";
 import ScoreContext from "../contexts/ScoreContext";
 
 export default function HomePage({ activeUser }) {

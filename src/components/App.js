@@ -19,9 +19,7 @@ function App() {
   const [loginModal, setLoginModal] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [activeUser, setActiveUser] = useState(
-    JSON.parse(localStorage.getItem("userObj"))
-  );
+  const [activeUser, setActiveUser] = useState(JSON.parse(localStorage.getItem("userObj")));
   const [latestScore, setLatestScore] = useState(null);
   const [latestScoreDate, setLatestScoreDate] = useState(null);
   const [highScore, setHighScore] = useState(null);
@@ -40,10 +38,8 @@ function App() {
     setErrorMsg(null);
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        "http://candycrushbackend-production.up.railway.app/api/v1/auth/register",
-        newUser
-      );
+      const URL = "http://candycrushbackend-production.up.railway.app/api/v1/auth/register";
+      const res = await axios.post(URL, newUser);
       const { user, token } = res.data;
       const userAndToken = user;
       userAndToken.token = token;
@@ -63,19 +59,12 @@ function App() {
 
   async function getHighScore() {
     try {
-      const userObj = {
-        email: activeUser.email,
-      };
-
-      const res = await axios.post(
-        "http://candycrushbackend-production.up.railway.app/api/v1/scores/highScore",
-        userObj
-      );
+      const userObj = { email: activeUser.email, };
+      const URL = "http://candycrushbackend-production.up.railway.app/api/v1/scores/highScore";
+      const res = await axios.post(URL, userObj);
       const { data } = res;
       const { highScore } = data;
-      if (highScore) {
-        setHighScore(highScore);
-      }
+      if (highScore) setHighScore(highScore);
     } catch (error) {
       console.error(error);
     }
@@ -83,24 +72,13 @@ function App() {
 
   async function getLastScore() {
     try {
-      const userObj = {
-        email: activeUser.email,
-      };
+      const userObj = { email: activeUser.email };
+      const URL = "http://candycrushbackend-production.up.railway.app/api/v1/scores/lastScore";
+      const res = await axios.post(URL, userObj);
+      const { lastScore, date } = res.data;
 
-      const res = await axios.post(
-        "http://candycrushbackend-production.up.railway.app/api/v1/scores/lastScore",
-        userObj
-      );
-      const { data } = res;
-      const { lastScore, date } = data;
-      console.log('data', data)
-      if (lastScore) {
-        setLatestScore(lastScore);
-      }
-      if (date) {
-        console.log(date);
-        setLatestScoreDate(date);
-      }
+      if (lastScore) setLatestScore(lastScore);
+      if (date) setLatestScoreDate(date);
     } catch (error) {
       console.error(error);
     }
@@ -109,7 +87,7 @@ function App() {
   useEffect(() => {
     getLastScore();
     getHighScore();
-   
+
 
     return () => {
       getLastScore();
@@ -127,11 +105,8 @@ function App() {
     setErrorMsg(null);
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        "http://candycrushbackend-production.up.railway.app/api/v1/auth/login",
-        userObj
-      );
-
+      const URL = "http://candycrushbackend-production.up.railway.app/api/v1/auth/login";
+      const res = await axios.post(URL, userObj);
       if (res) {
         const { user, token } = res.data;
         const userAndToken = user;

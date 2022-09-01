@@ -15,16 +15,11 @@ export default function NavigationBar({
     const date = new Date();
     const hours = date.getHours();
 
-    if (hours < 12) {
-      return (greeting = `Good Morning ${activeUser.firstName} ${activeUser.lastName} `);
-    }
-    if (hours < 18) {
-      greeting = `Good afternoon ${activeUser.firstName || activeUser.email} ${
-        activeUser.lastName || ""
-      }`;
-    } else {
-      greeting = `Good Evening ${activeUser.firstName} ${activeUser.lastName} `;
-    }
+    if (hours < 12) return (greeting = `Good Morning ${activeUser.firstName} ${activeUser.lastName} `);
+    if (hours < 18) greeting = `Good afternoon ${activeUser.firstName || activeUser.email} ${activeUser.lastName || ""}`;
+
+    else greeting = `Good Evening ${activeUser.firstName} ${activeUser.lastName} `;
+
     return greeting;
   }
 

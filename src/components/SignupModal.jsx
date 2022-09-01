@@ -46,6 +46,7 @@ export default function SignupModal(props) {
     const lName = capitalizeFirstLetter(lastNameRef.current.value);
     const userName = userNameRef.current.value;
     const pwd = pwdRef.current.value;
+  
     e.preventDefault();
 
     if (!fName || !lName || !emailValue || !userName || !pwd) {

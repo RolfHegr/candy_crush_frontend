@@ -16,12 +16,9 @@ export default function LoginModal(props) {
     e.preventDefault();
     const emailInput = emailRef.current.value;
     const pwdInput = pwdRef.current.value;
-    if (emailInput && pwdInput) {
-      setDisableBtn(false);
-    }
-    if (!emailInput || !pwdInput) {
-      setDisableBtn(true);
-    }
+
+    if (emailInput && pwdInput) setDisableBtn(false);
+    if (!emailInput || !pwdInput) setDisableBtn(true);
   }
 
   function handleLogin(e) {
