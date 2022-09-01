@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Rubik:wght@500&display=swap");
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+}
+
+#nav-dropdown {
+  font-size: 1.1rem;
+}
+
+#cta {
+  margin: 0 auto;
+}

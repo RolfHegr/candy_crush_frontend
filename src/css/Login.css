@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400&family=Rubik:wght@500&display=swap");
+
+#loginBtn {
+  background-color: #4c78a0;
+  align-self: center;
+}
+
+.box-container {
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 8px 7px 21px 6px rgba(186, 188, 190, 0.29);
+  box-shadow: 8px 7px 21px 6px rgba(174, 176, 177, 0.29);
+}
+
+#loginContainer {
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 8px 7px 21px 6px rgba(186, 188, 190, 0.29);
+  box-shadow: 8px 7px 21px 6px rgba(174, 176, 177, 0.29);
+}
+
+form > * {
+  padding: 0.3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-line {
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px 3px #ff65bd;
+  font-family: "Press Start 2P", cursive;
+  padding: 2%;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 8px 16px -6px #999;
+  -moz-box-shadow: 2px 8px 16px -6px #999;
+  box-shadow: 2px 8px 16px -6px #999;
+}
+
+#loginBtn {
+  background-color: #c14d8f;
+  font-size: 1.2rem;
+  margin: 0 2rem;
+  border: none !important;
+}
+
+#loginBtn:hover {
+  background-color: #ee257d;
+  
+}
